@@ -6,6 +6,7 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
+		incrementBy.Text = "1";
 	}
 
 	public void displayNumbers(object sender, EventArgs e)
@@ -34,6 +35,7 @@ public partial class MainPage : ContentPage
 		else
 		{
 			incrementValue = 1;
+			incrementBy.Text = $"{incrementValue}";
 		}
 
 		if(first_number > second_number)
