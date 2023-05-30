@@ -10,30 +10,29 @@
             VerticalOptions="Center">
 
             <Frame>
-                <HorizontalStackLayout>
-                    <Label Text="First Number"/>
-                    <Entry Keyboard="Numeric" x:Name="firstNumber" />
+                <HorizontalStackLayout HorizontalOptions="Fill">
+                    <Label Text="First Number" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                    <Entry Keyboard="Numeric" x:Name="firstNumber" WidthRequest="100" HorizontalOptions="End" />
                 </HorizontalStackLayout>
             </Frame>
             <Frame>
                 <HorizontalStackLayout>
-                    <Label Text="Second Number"/>
-                    <Entry Keyboard="Numeric" x:Name="secondNumber" />
+                    <Label Text="Second Number" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Entry Keyboard="Numeric" x:Name="secondNumber" WidthRequest="100" />
                 </HorizontalStackLayout>
             </Frame>
             <Frame>
                 <HorizontalStackLayout>
-                    <Label Text="Count By"/>
-                    <Entry Keyboard="Numeric" x:Name="incrementBy" />
+                    <Label Text="Count By" VerticalOptions="Center" />
+                    <Entry Keyboard="Numeric" x:Name="incrementBy" WidthRequest="100" />
                 </HorizontalStackLayout>
             </Frame>
-            <Button Text="Display"/>
-            <Frame>
-                <HorizontalStackLayout>
-                    <Label Text="Output Number"/>
-                    <Label x:Name="OutputValue"/>
-                </HorizontalStackLayout>
-            </Frame>
+            <Button Text="Display" Clicked="displayNumbers"/>
+            
+                <ScrollView>
+                    <Label x:Name="OutputValue" FontSize="15" LineBreakMode="WordWrap"/>
+                </ScrollView>
+            
         </VerticalStackLayout>
     </ScrollView>
 

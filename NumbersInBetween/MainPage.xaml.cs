@@ -2,23 +2,51 @@
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
-
+	string output_number = "";
 	public MainPage()
 	{
 		InitializeComponent();
 	}
 
-	private void OnCounterClicked(object sender, EventArgs e)
+	public void displayNumbers(object sender, EventArgs e)
 	{
-		count++;
+		output_number = "";
+		if(!int.TryParse(firstNumber.Text, out int first_number) || !int.TryParse(secondNumber.Text, out int second_number))
+		{
+			OutputValue.Text = "Input is not valid. Enter valid stard and end numbers.";
+			return;
+		}
 
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
+		int incrementValue;
+
+		if (!string.IsNullOrEmpty(incrementBy.Text))
+		{
+			if(int.TryParse(incrementBy.Text, out int increment_value))
+			{
+				incrementValue = increment_value;
+			}
+			else
+			{
+				OutputValue.Text = "Invalid input. Please enter a valid input.";
+				return;
+			}
+		}
 		else
-			CounterBtn.Text = $"Clicked {count} times";
+		{
+			incrementValue = 1;
+		}
 
-		SemanticScreenReader.Announce(CounterBtn.Text);
+		if(first_number > second_number)
+		{
+			OutputValue.Text = "First number must le less than second number";
+			return;
+		}
+
+		for(int i = first_number + incrementValue; i<second_number; i += incrementValue)
+		{
+			output_number += $"{i} ";
+		}
+		OutputValue.Text = output_number;
 	}
 }
 
