@@ -8,6 +8,7 @@
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
+            <Label Text="Numbers in Between" FontSize="30" HorizontalOptions="Center"/>
 
             <Frame>
                 <HorizontalStackLayout HorizontalOptions="Fill">
@@ -16,9 +17,9 @@
                 </HorizontalStackLayout>
             </Frame>
             <Frame>
-                <HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Fill">
                     <Label Text="Second Number" HorizontalOptions="Center" VerticalOptions="Center"/>
-                    <Entry Keyboard="Numeric" x:Name="secondNumber" WidthRequest="100" />
+                    <Entry Keyboard="Numeric" x:Name="secondNumber" WidthRequest="100" HorizontalOptions="End"/>
                 </HorizontalStackLayout>
             </Frame>
             <Frame>
